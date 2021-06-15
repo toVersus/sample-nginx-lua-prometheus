@@ -2,7 +2,7 @@ TAG=0.1.0
 
 .PHONY: build
 build:
-	DOCKER_BUILDKIT=1 docker build -t sample-nginx-lua-prometheus:${TAG} .
+	DOCKER_BUILDKIT=1 docker build --no-cache --progress=plain -t sample-nginx-lua-prometheus:${TAG} .
 
 .PHONY: run
 run:

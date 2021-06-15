@@ -2,9 +2,8 @@ FROM alpine:3.13
 
 RUN set -eux \
   && apk add --no-cache \
-  nginx \
-  nginx-mod-http-lua \
   curl \
+  && apk add nginx=1.20.1-r3 nginx-mod-http-lua=1.20.1-r3 luajit=2.1_p20210510-r0 --repository=http://dl-cdn.alpinelinux.org/alpine/edge/main \
   && mkdir -p /run/nginx \
   # See https://github.com/knyar/nginx-lua-prometheus#try-using-an-older-version-of-the-library
   # && curl -s https://raw.githubusercontent.com/knyar/nginx-lua-prometheus/0.20181120/prometheus.lua > /etc/nginx/prometheus.lua
